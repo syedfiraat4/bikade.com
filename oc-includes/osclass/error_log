@@ -1,0 +1,280 @@
+[12-Sep-2015 11:58:49 UTC]  ------- START upgrade-funcs ------- 
+[12-Sep-2015 13:58:49 Europe/Madrid]  ----- START updateDB ----- 
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_username VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_password CHAR(60) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_email VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_secret VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_email VARCHAR(100) DEFAULT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_user_id INT(10) UNSIGNED DEFAULT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_search LONGTEXT
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_secret VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_active TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- e_type enum('INSTANT','HOURLY','DAILY','WEEKLY','CUSTOM') NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_parent_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_expiration_days INT(3) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_position INT(2) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_icon VARCHAR(250) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_category_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_locale_code CHAR(5) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(100) NULL DEFAULT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_description TEXT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_slug VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_category_id INT(10) UNSIGNED NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_items INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_region_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(60) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_country_code CHAR(2) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_active TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_id INT(10) UNSIGNED NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_items INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_c_code CHAR(2) NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(80) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_country_code CHAR(2) NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_items INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- e_type enum('INSTANT','HOURLY','DAILY','WEEKLY','CUSTOM') NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_last_exec DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_next_exec DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_c_code CHAR(3) NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_description VARCHAR(80) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_user_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_category_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_pub_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_mod_date DATETIME NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- f_price FLOAT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_price BIGINT(20) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_currency_code CHAR(3) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_contact_name VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_contact_email VARCHAR(140) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_premium TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_active TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_spam TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_secret VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_show_email TINYINT(1) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_expiration datetime NOT NULL DEFAULT '9999-12-31 23:59:59'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_item_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_pub_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_title VARCHAR(200) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_author_name VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_author_email VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_body TEXT NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_active TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_spam TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_user_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_item_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_locale_code CHAR(5) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_title VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_description MEDIUMTEXT NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_item_id INT(10) UNSIGNED NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_country_code CHAR(2) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_country VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_address VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_zip VARCHAR(15) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_region_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_region VARCHAR(100)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_city VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_area_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_city_area VARCHAR(200) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_coord_lat DECIMAL(10,6)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_coord_long DECIMAL(10,6)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_item_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_field_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_value TEXT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_item_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(60) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_extension VARCHAR(10) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_content_type VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_path VARCHAR(250) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_item_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_views INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_spam INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_repeated INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_bad_classified INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_offensive INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_expired INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_premium_views INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_date DATE NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_md5 VARCHAR(32) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_locale_code CHAR(5) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_original_text VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_anchor_text VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_normalized_text VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_category_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_search VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_c_code CHAR(5) NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_short_name VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_description VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_version VARCHAR(20) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_author_name VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_author_url VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_currency_format VARCHAR(50) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_dec_point VARCHAR(2) NULL DEFAULT '.'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_thousands_sep VARCHAR(2) NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_dec TINYINT(4) NULL DEFAULT 2
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_date_format VARCHAR(20) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_stop_words TEXT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled_bo TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- id_location varchar(10) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- e_type enum('COUNTRY','REGION','CITY') NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_section VARCHAR(50) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_action VARCHAR(50) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_data VARCHAR(250) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_ip VARCHAR(50) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_who VARCHAR(50) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_who_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_category_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_field_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_slug VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- e_type ENUM('TEXT','TEXTAREA','DROPDOWN','RADIO','CHECKBOX','URL', 'DATE', 'DATEINTERVAL') NOT NULL DEFAULT  'TEXT'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_options VARCHAR(2048) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_required TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_internal_name VARCHAR(50) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_indelible TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_pub_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_mod_date DATETIME NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_order INT(3) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_pages_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_locale_code CHAR(5) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_title VARCHAR(255) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_text TEXT
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_plugin_name VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_category_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_section VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_value LONGTEXT NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- e_type ENUM('STRING', 'INTEGER', 'BOOLEAN') NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_country_code CHAR(2) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(60) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_active TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_region_id INT(10) UNSIGNED NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_num_items INT(10) UNSIGNED NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_reg_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_mod_date DATETIME NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_name VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_password CHAR(60) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_secret VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_email VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_website VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_phone_land VARCHAR(45)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_phone_mobile VARCHAR(45)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_active TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_pass_code VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_pass_date DATETIME NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_pass_ip VARCHAR(15) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_country_code CHAR(2) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_country VARCHAR(40) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_address VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_zip VARCHAR(15) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_region_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_region VARCHAR(100)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_city VARCHAR(100) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_city_area_id INT(10) UNSIGNED NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_city_area VARCHAR(200) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_coord_lat DECIMAL(10,6)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- d_coord_long DECIMAL(10,6)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- b_company TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_items INT(10) UNSIGNED NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- i_comments INT(10) UNSIGNED NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_user_id INT(10) UNSIGNED NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_c_locale_code CHAR(5) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_info TEXT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- fk_i_user_id INT(10) UNSIGNED NOT NULL PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_new_email VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- dt_date DATETIME NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_description VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_location VARCHAR(40) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- e_kind ENUM('TEXT', 'HTML') NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- s_content MEDIUMTEXT NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- last_struct_queries ---
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- 
+
+CREATE TABLE osc_t_alerts_sent (
+    d_date DATE NOT NULL,
+    i_num_alerts_sent INT(10) UNSIGNED NOT NULL DEFAULT 0,
+
+    PRIMARY KEY (d_date)
+) ENGINE=InnoDB DEFAULT CHARACTER SET 'UTF8' COLLATE 'UTF8_GENERAL_CI'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- 
+
+CREATE TABLE osc_t_ban_rule (
+  pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  s_name VARCHAR(250) NOT NULL DEFAULT '',
+  s_ip VARCHAR(50) NOT NULL DEFAULT '',
+  s_email VARCHAR(250) NOT NULL DEFAULT '',
+
+  PRIMARY KEY (pk_i_id)
+) ENGINE=InnoDB DEFAULT CHARACTER SET 'UTF8' COLLATE 'UTF8_GENERAL_CI'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_admin CHANGE COLUMN s_password s_password CHAR(60) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_admin ADD COLUMN b_moderator TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_alerts ADD COLUMN pk_i_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_alerts ADD COLUMN dt_date DATETIME NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_alerts ADD COLUMN dt_unsub_date DATETIME NULL DEFAULT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_category ADD COLUMN b_price_enabled TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_category ADD INDEX (fk_i_parent_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_category ADD INDEX (i_position)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_category_description ADD INDEX idx_s_slug (s_slug)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_city ADD COLUMN s_slug VARCHAR(60) NOT NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_city ADD INDEX (fk_i_region_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_city ADD INDEX idx_s_slug (s_slug)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_city_area ADD INDEX (fk_i_city_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_country ADD COLUMN s_slug VARCHAR(80) NOT NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_country ADD INDEX idx_s_slug (s_slug)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD COLUMN s_ip VARCHAR(64) NOT NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD INDEX (fk_i_user_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD INDEX idx_b_premium (b_premium)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD INDEX idx_s_contact_email (s_contact_email(10))
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD INDEX (fk_i_category_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD INDEX (fk_c_currency_code)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item ADD FOREIGN KEY (fk_c_currency_code) REFERENCES osc_t_currency (pk_c_code)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item_comment ADD INDEX (fk_i_item_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item_meta ADD COLUMN s_multi VARCHAR(20) NOT NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item_meta DROP PRIMARY KEY, ADD PRIMARY KEY (fk_i_item_id, fk_i_field_id, s_multi)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item_meta ADD INDEX s_value (s_value(255))
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item_resource ADD INDEX (fk_i_item_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_item_stats ADD INDEX (dt_date, fk_i_item_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_keywords ADD INDEX (fk_i_category_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_keywords ADD INDEX (fk_i_city_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_meta_fields CHANGE COLUMN e_type e_type ENUM('TEXT','TEXTAREA','DROPDOWN','RADIO','CHECKBOX','URL', 'DATE', 'DATEINTERVAL') NOT NULL DEFAULT  'TEXT'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_meta_fields CHANGE COLUMN s_options s_options VARCHAR(2048) NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_meta_fields ADD COLUMN b_searchable TINYINT(1) NOT NULL DEFAULT 0
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_pages ADD COLUMN b_link TINYINT(1) NOT NULL DEFAULT 1
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_pages ADD COLUMN s_meta TEXT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_plugin_category ADD INDEX (fk_i_category_id)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_region ADD COLUMN s_slug VARCHAR(60) NOT NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_region ADD INDEX (fk_c_country_code)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_region ADD INDEX idx_s_slug (s_slug)
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_user CHANGE COLUMN s_password s_password CHAR(60) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_user ADD COLUMN s_username VARCHAR(100) NOT NULL
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_user ADD COLUMN dt_access_date DATETIME NOT NULL DEFAULT  '0000-00-00 00:00:00'
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_user ADD COLUMN s_access_ip VARCHAR(15) NOT NULL DEFAULT ''
+[12-Sep-2015 13:58:49 Europe/Madrid]  --- ALTER TABLE osc_t_user ADD INDEX idx_s_username (s_username)
+[12-Sep-2015 13:58:50 Europe/Madrid]  ----- END updateDB ----- 
